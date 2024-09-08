@@ -16,12 +16,25 @@ docker-compose is required as the script runs code from google inside the docker
 
 ## Instructions
 
-1) Create user invidious
+Below assumes the following:
+USER - invidious
+INSTALL LOCATION - ~invidious/invidious/
+SCRIPT LOCATION - ~invidious/invidious/invidious-token-updater/update-tokens.sh
+
+1) Create user invidious (as root)
    ```useradd -m invidious```
-2) Add user to /etc/sudoers ```invidious ALL=(ALL:ALL)NOPASSWD:ALL```
-3) Install invidious to the home directory of ```~invidious``` (follow invidious manual install instructions)
-4) Edit ```config/config.example.yml``` to contain your settings
-5) Either in home directory, or invidious directory, clone this script ```git clone ...```
-6) Edit the update-tokens.sh script to contain the installation directory (if different from ~invidious/invidious)
-7) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check config.yml gets created with tokens on the bottom
-8) Add a crontab ```crontab```
+2) Add user to /etc/sudoers (as root) ```invidious ALL=(ALL:ALL)NOPASSWD:ALL```
+3) Add user to docker group (as root) ```usermod -aG docker invidious```
+4) Switch to invidious user ```su - invidious```
+5) Install invidious to the home directory of ```~invidious``` (follow invidious manual install instructions)
+6) Edit ```config/config.example.yml``` to contain your settings
+7) Inside invidious directory, clone this script ```git clone ...```
+8) Edit the update-tokens.sh script to contain the installation directory (if different from ~invidious/invidious)
+9) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
+10) Add a crontab ```crontab```
+
+The reason this script is dirty is I can't figure out how to edit the existing config.yml and so I chose to delete existing one then copy a new one and append the tokens to the bottom.
+
+If anyone wishes they can fork the code and modify it to a more proper state, and submit the script to invidious repository.
+
+I just hacked something together to make it work. This is by no means production-worthy.
