@@ -28,10 +28,10 @@ SCRIPT LOCATION - ~invidious/invidious/invidious-token-updater/update-tokens.sh
 4) Switch to invidious user ```su - invidious```
 5) Install invidious to the home directory of ```~invidious``` (follow invidious manual install instructions)
 6) Edit ```config/config.example.yml``` to contain your settings
-7) Inside invidious directory, clone this script ```git clone https://github.com/mooleshacat/invidious-token-updater/tree/master```
+7) Inside invidious directory, clone this script ```git clone https://github.com/mooleshacat/invidious-token-updater.git```
 8) Edit the update-tokens.sh script to contain the installation directory (if different from ~invidious/invidious)
 9) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
-10) Add a crontab ```crontab```
+10) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
 
 The reason this script is dirty is I can't figure out how to edit the existing config.yml and so I chose to delete existing one then copy a new one and append the tokens to the bottom.
 
