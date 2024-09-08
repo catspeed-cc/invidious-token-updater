@@ -14,6 +14,8 @@ Please note the script will DELETE your config.yml and copy config.example.yml t
 
 docker-compose is required as the script runs code from google inside the docker container to get the tokens
 
+***This script is NOT production worthy without extensive changes to the way the tokens are updated, etc.***
+
 ## Instructions
 
 Below assumes the following:
@@ -37,8 +39,8 @@ SCRIPT LOCATION - ~invidious/invidious/invidious-token-updater/update-tokens.sh
 10) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
 11) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
 
-The reason this script is dirty is I can't figure out how to edit the existing config.yml and so I chose to delete existing one then copy a new one and append the tokens to the bottom.
+The reason this script is dirty is I can't figure out how to edit the existing config.yml and so I chose to delete existing one then copy a new one and append the tokens to the bottom. This works for me in my private, firewalled instance, but is not meant to be used in production without extensive changes.
 
 If anyone wishes they can fork the code and modify it to a more proper state, and submit the script to invidious repository.
 
-I just hacked something together to make it work. This is by no means production-worthy.
+***I just hacked something together to make it work. This is by no means production-worthy.***
