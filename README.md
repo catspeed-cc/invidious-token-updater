@@ -14,6 +14,8 @@ Please note the script will DELETE your config.yml and copy config.example.yml t
 
 docker-compose is required as the script runs code from google inside the docker container to get the tokens
 
+The tokens only need updating once per 24-48 hours, however I think it is better to do it every 3 hours to change the tokens regularily to try and stay as anonymous as possible.
+
 ***This script is NOT production worthy without extensive changes to the way the tokens are updated, etc.***
 
 ## Instructions
