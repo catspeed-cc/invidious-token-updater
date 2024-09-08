@@ -17,8 +17,11 @@ docker-compose is required as the script runs code from google inside the docker
 ## Instructions
 
 Below assumes the following:
+
 USER - invidious
+
 INSTALL LOCATION - ~invidious/invidious/
+
 SCRIPT LOCATION - ~invidious/invidious/invidious-token-updater/update-tokens.sh
 
 1) Create user invidious (as root)
