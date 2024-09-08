@@ -45,5 +45,5 @@ The reason this script is dirty is I can't figure out how to edit the existing c
 
 If anyone wishes they can fork the code and modify it to a more proper state, and submit the script to invidious repository.
 
-***If you want a production ready script, make the changes yourself, or hire someone who knows what they are doing.***
+***If you want a production ready script, make the changes yourself, or hire someone who knows what they are doing.***<br />
 ***I just hacked something together to make it work. This is by no means production-worthy.***
