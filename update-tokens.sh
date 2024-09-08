@@ -2,6 +2,8 @@
 
 # SET YOUR INVIDIOUS INSTALL DIR HERE
 export INSTALL_DIR=~invidious/invidious/
+
+# LOG FILE LOCATION
 export LOG_FILE=~invidious/invidious/invidious-token-updater.log
 
 echo ""
