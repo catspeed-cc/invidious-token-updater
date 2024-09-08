@@ -2,6 +2,7 @@
 
 # SET YOUR INVIDIOUS INSTALL DIR HERE
 export INSTALL_DIR=~invidious/invidious/
+export LOG_FILE=~invidious/invidious-token-updater.log
 
 echo ""
 echo "Generating visitordata & potoken please wait ..."
@@ -44,6 +45,11 @@ echo ""
 # ECHO THE TOKENS TO BOTTOM OF THE CONFIG FILE
 echo "po_token: \"${POTOKEN}\"" | tee -a config.yml
 echo "visitor_data: \"${VISITORDATA}\"" | tee -a config.yml
+
+# ECHO THE TOKENS TO LOGFILE
+TSTAMP=$(date +"[%D][%T]")
+echo "${TSTAMP} po_token: \"${POTOKEN}\"" | tee -a ${LOG_FILE} >/dev/null
+echo "${TSTAMP} visitor_data: \"${VISITORDATA}\"" | tee -a ${LOG_FILE} >/dev/null
 
 echo ""
 echo "Restarting Invidious Service"
