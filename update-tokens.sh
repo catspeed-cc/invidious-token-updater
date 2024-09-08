@@ -48,6 +48,8 @@ echo "visitor_data: \"${VISITORDATA}\"" | tee -a config.yml
 
 # ECHO THE TOKENS TO LOGFILE
 TSTAMP=$(date +"[%D][%T]")
+echo "" | tee -a ${LOG_FILE} >/dev/null
+echo "${TSTAMP} UPDATED TOKENS!" | tee -a ${LOG_FILE} >/dev/null
 echo "${TSTAMP} po_token: \"${POTOKEN}\"" | tee -a ${LOG_FILE} >/dev/null
 echo "${TSTAMP} visitor_data: \"${VISITORDATA}\"" | tee -a ${LOG_FILE} >/dev/null
 
