@@ -2,7 +2,7 @@
 
 # SET YOUR INVIDIOUS INSTALL DIR HERE
 export INSTALL_DIR=~invidious/invidious/
-export LOG_FILE=~invidious/invidious-token-updater.log
+export LOG_FILE=~invidious/invidious/invidious-token-updater.log
 
 echo ""
 echo "Generating visitordata & potoken please wait ..."
