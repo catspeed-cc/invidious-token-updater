@@ -60,5 +60,5 @@ echo ""
 sudo service invidious restart
 
 echo ""
-echo "Done. Have a good day :)"
+echo "Done."
 echo ""
