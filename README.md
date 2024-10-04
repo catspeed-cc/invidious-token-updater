@@ -9,17 +9,19 @@ This script is to automatically update the visitordata and po-token for Invidiou
 
 This script is very dirty and will never be added to the invidious repository without extensive modifications.
 
-This script was written for a manually installed instance of Invidious under the user account "invidious". Invidious executable must already be compiled, and service started. The script will modify the configuration file and restart the service.
+This script was written for a manually installed instance of Invidious under the user account "invidious". Invidious executable must already be compiled, and service already started. The script will modify the configuration file and restart the service.
 
-The user must have sudo access without password in order to restart the service, otherwise the script will ask for password. This is OK if you plan to run the script manually, but for crontab to automate it hourly, it will not work with a password.
-
-Please note the script has now been modified so that you provide the Invidious installation directory in the configuration file, and the script will modify the configuration file directly.
+The user 'invidious' must have sudo access without password in order to restart the service, otherwise the script will ask for password. This is OK if you plan to run the script manually, but for crontab to automate it hourly, it will not work with a password.
 
 docker and docker-compose is required as the script runs code from google inside the docker container to get the tokens
 
+Now and then, YT will show a blank page to you and ask to perform a search in order for the algo to show you videos. This is a load of BS, YT is just testing to see if you are a bot or human. I've added a curl command to automagically perform a search query randomized from searches.txt
+
 The tokens only need updating once per 24-48 hours, however I think it is better to do it every 3 hours to change the tokens regularily to try and stay as anonymous as possible.
 
-Now and then, YT will show a blank page to you and ask to perform a search in order for the algo to show you videos. This is a load of BS, YT is just testing to see if you are a bot or human. I've added a curl command to automagically perform a search query randomized from searches.txt
+***The script no longer replaces the invidious configuration file, it will edit the specific configuration lines directly.***
+
+***It is no longer required that the script resides inside the invidious directory.***
 
 ***This script is NOT production worthy without extensive changes to the way the tokens are updated, etc.***
 
@@ -29,7 +31,9 @@ Below assumes the following:
 
 USER - invidious
 
-INSTALL LOCATION - ~invidious/invidious/
+INVIDIOUS INSTALL LOCATION - ~invidious/invidious/
+
+INVIDIOUS TOKEN UPDATER INSTALL LOCATION - ~invidious/invidious-token-updater/
 
 SCRIPT LOCATION - ~invidious/invidious/invidious-token-updater/update-tokens.sh
 
