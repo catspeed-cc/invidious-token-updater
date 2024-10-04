@@ -51,16 +51,16 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 ### Install inv_sig_helper (using docker)
 1) Switch to invidious user ```su - invidious``` if not already
 2) Make sure you are in home directory ```cd ~```
-3) Clone inv_sig_helper repository ```git clone https://github.com/iv-org/inv_sig_helper.git``` (follow inv_sig_helper docker install instructions)
-4) Change directory ```cd inv_sig_helper```
+3) Clone inv_sig_helper repository ```git clone https://github.com/iv-org/inv_sig_helper.git```
+4) Change directory ```cd inv_sig_helper``` (follow inv_sig_helper docker install instructions)
 5) Build the docker image ```docker build -t inv_sig_helper .``` - this may take a while.
 6) Run the docker container ```sudo docker run --restart unless-stopped --network host --name inv_sig_helper -p 127.0.0.1:12999:12999 inv_sig_helper```
 
 ### Install invidious (manual compile and installation)
 1) Switch to invidious user ```su - invidious``` if not already
 2) Make sure you are in home directory ```cd ~```
-3) Clone invidious repository ```git clone https://github.com/iv-org/invidious.git``` (follow invidious manual compile/install instructions)
-4) Change directory ```cd invidious```
+3) Clone invidious repository ```git clone https://github.com/iv-org/invidious.git```
+4) Change directory ```cd invidious``` (follow invidious manual compile/install instructions)
 5) Copy ```~invidious/invidious/config/config.example.yml``` to ```config/config.yml```
 6) Edit ```~invidious/invidious/config/config.yml``` to your liking 
 	- change hmac_key to anything random
