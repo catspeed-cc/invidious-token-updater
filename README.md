@@ -35,22 +35,48 @@ USER - invidious
 
 INVIDIOUS INSTALL LOCATION - ~invidious/invidious/
 
+INV_SIG_HELPER INSTALL LOCATION - ~invidious/inv_sig_helper/
+
 INVIDIOUS TOKEN UPDATER INSTALL LOCATION - ~invidious/invidious-token-updater/
 
 SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 
+### Preperations
+
 1) Create user invidious (as root)
    ```useradd -m invidious```
-2) Add user to /etc/sudoers (as root) ```invidious ALL=(ALL:ALL)NOPASSWD:ALL```
+2) Add user to /etc/sudoers (as root) ```nano /etc/sudoers``` add in ```invidious ALL=(ALL:ALL)NOPASSWD:ALL```
 3) Add user to docker group (as root) ```usermod -aG docker invidious```
-4) Switch to invidious user ```su - invidious```
-5) Install invidious to the home directory of ```~invidious``` (follow invidious manual install instructions)
-6) Edit ```config/config.example.yml``` to contain your settings
-7) Inside invidious directory, clone this script ```git clone https://github.com/mooleshacat/invidious-token-updater.git```
-8) Chmod the update-tokens.sh script ```chmod +x ~invidious/invidious/invidious-token-updater/update-tokens.sh```
-9) Edit the update-tokens.sh script to contain the installation directory (if different from ~invidious/invidious)
-10) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
-11) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
+
+### Install inv_sig_helper in docker to run on 127.0.0.1:12999
+1) Switch to invidious user ```su - invidious```
+2) Make sure you are in home directory ```cd ~```
+3) Clone inv_sig_helper repository ```git clone https://github.com/iv-org/inv_sig_helper.git``` (follow inv_sig_helper docker install instructions)
+4) Change directory ```cd inv_sig_helper```
+5) Build the docker image ```docker build -t inv_sig_helper .```
+6) Run the docker container ```sudo docker run --restart unless-stopped --network host --name inv_sig_helper -p 127.0.0.1:12999:12999 inv_sig_helper```
+
+### Install invidious (manual compile and installation)
+1) Switch to invidious user ```su - invidious```
+2) Make sure you are in home directory ```cd ~```
+3) Clone invidious repository ```git clone https://github.com/iv-org/invidious.git``` (follow invidious manual compile/install instructions)
+4) Change directory ```cd invidious```
+5) Copy ```~invidious/invidious/config/config.example.yml``` to ```config/config.yml```
+6) Edit ```~invidious/invidious/config/config.yml``` to your liking 
+	- change hmac_key to anything random
+	- update mongodb settings (should be localhost, verify user/pass are correct)
+	- update signature_server line to your inv_sig_helper LAN IP(should be localhost, verify port is correct)
+
+
+### Install invidious-token-updater
+1) Switch to invidious user ```su - invidious```
+2) Make sure you are in home directory ```cd ~```
+3) Clone this repository ```git clone https://github.com/mooleshacat/invidious-token-updater.git```
+4) Change directory ```cd invidious-token-updater```
+4) Copy ```config.cfg.example``` to ```config.cfg```
+5) Edit ```config.cfg``` to your liking (most defaults probably OK)
+5) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
+6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
 
 The reason this script is dirty is I can't figure out how to edit the existing config.yml and so I chose to delete existing one then copy a new one and append the tokens to the bottom. This works for me in my private, firewalled instance, but is not meant to be used in production without extensive changes.
 
