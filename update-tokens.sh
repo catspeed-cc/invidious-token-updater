@@ -53,10 +53,10 @@ sed -i 's/*visitor_data.*/visitor_data: \"'${VISITORDATA}'\"/g' ${INV_INSTALL_DI
 
 # ECHO THE TOKENS TO LOGFILE
 TSTAMP=$(date +"[%D][%T]")
-echo "" | tee -a ${INV_LOG_FILE} >/dev/null
-echo "${TSTAMP} UPDATED TOKENS!" | tee -a ${INV_LOG_FILE} >/dev/null
-echo "${TSTAMP} po_token: \"${POTOKEN}\"" | tee -a ${INV_LOG_FILE} >/dev/null
-echo "${TSTAMP} visitor_data: \"${VISITORDATA}\"" | tee -a ${INV_LOG_FILE} >/dev/null
+echo "" | tee -a ${ITU_LOG_FILE} >/dev/null
+echo "${TSTAMP} UPDATED TOKENS!" | tee -a ${ITU_LOG_FILE} >/dev/null
+echo "${TSTAMP} po_token: \"${POTOKEN}\"" | tee -a ${ITU_LOG_FILE} >/dev/null
+echo "${TSTAMP} visitor_data: \"${VISITORDATA}\"" | tee -a ${ITU_LOG_FILE} >/dev/null
 
 
 
@@ -69,6 +69,7 @@ YT_QUERY=${YT_QUERY//[$'\t\r\n']}
 YT_QUERY=${YT_QUERY// /+}
 echo "Querying for '${YT_QUERY}'"
 curl https://www.youtube.com/results?search_query=${YT_QUERY} > /dev/null
+echo "${TSTAMP} YT_QUERY: \"${YT_QUERY}\"" | tee -a ${ITU_LOG_FILE} >/dev/null
 
 echo ""
 echo "Restarting inv_sig_helper docker..."
