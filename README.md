@@ -78,8 +78,6 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 5) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
 6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
 
-The reason this script is dirty is I can't figure out how to edit the existing config.yml and so I chose to delete existing one then copy a new one and append the tokens to the bottom. This works for me in my private, firewalled instance, but is not meant to be used in production without extensive changes.
-
 If anyone wishes they can fork the code and modify it to a more proper state, and submit the script to invidious repository.
 
 ***If you want a production ready script, make the changes yourself, or hire someone who knows what they are doing.***
