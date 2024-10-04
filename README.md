@@ -1,7 +1,7 @@
 # invidious-token-updater
 
-## SCRIPT IS IN PROCESS OF BEING UPDATED ... CLONE/PULL AT OWN RISK.
-A proper development branch will be set up eventually. Readme below will be updated once new changes are finalized.
+## Script is abandoned again.
+I cannot figure out a good way to incorporate all three repositories, or explain how to install them separately. The project is a mess, however if anyone figures it out and can use it then that is ok :)
 
 ## General
 
