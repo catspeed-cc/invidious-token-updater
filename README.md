@@ -1,8 +1,7 @@
 # invidious-token-updater
 
 ## SCRIPT IS IN PROCESS OF BEING UPDATED ... CLONE/PULL AT OWN RISK.
-A proper development branch will be set up eventually.
-Readme below will be updated once new changes are finalized.
+A proper development branch will be set up eventually. Readme below will be updated once new changes are finalized.
 
 ## General
 
