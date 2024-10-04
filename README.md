@@ -15,7 +15,7 @@ docker and docker-compose is required as the script runs code from google inside
 
 Now and then, YT will show a blank page to you and ask to perform a search in order for the algo to show you videos. This is a load of BS, YT is just testing to see if you are a bot or human. I've added a curl command to automagically perform a search query randomized from searches.txt. This will be done on every execution of the script (basically whenever you set up the cron job for, ex. every 3 hours)
 
-You may add your own searches, one per line, so that there are more searches - too many for YT to ban. The likeliness of them starting to ban these specific searches is likely non-existant, as this would make the platform un-usable - eventually all searches possible would be banned. Using a more common search term is preferable, as banning it would also ban legitimate searches for the same term.
+You may add your own searches, one per line, so that there are more searches - too many for YT to ban. The chances of them starting to ban these specific searches is likely non-existant, as this would make the platform un-usable - eventually all searches possible would be banned. Using a more common search term is preferable, as banning it would also ban legitimate searches for the same term.
 
 If YT shows you cat videos, don't ask questions :3c
 
@@ -23,7 +23,7 @@ The tokens only need updating once per 24-48 hours, however I think it is better
 
 ***It is no longer required that the script resides inside the invidious directory.***
 
-***The script no longer replaces the invidious configuration file, it will edit the specific configuration lines directly.***
+***The script no longer replaces the invidious configuration file, it will edit the specific configuration lines directly inside ```~invidious/invidious/config/config.yml```.***
 
 ***The script is NOT production ready without extensive changes to the way the tokens are updated, etc.***
 
