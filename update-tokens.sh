@@ -27,18 +27,20 @@ echo "Generating visitordata & potoken..."
 echo ""
 
 # THIS IS THE ACTUAL COMMAND, WILL TAKE TIME TO PROCESS
-theOUTPUT=$(sudo docker run --rm quay.io/invidious/youtube-trusted-session-generator)
+rawOutput=$(sudo docker run --rm quay.io/invidious/youtube-trusted-session-generator)
 
 # This is a test output
-#theOUTPUT="[INFO] internally launching GUI (X11 environment) [INFO] starting Xvfb [INFO] launching chromium instance [INFO] launching browser. visitor_data: TESTINGOUTPUTONLY-CgtqX3B3M3k2QklmRIEGgAgUg%3D%3D po_token: TESTINGOUTPUTONLY-jCQOtGaJ4KediLqyCsdGqZmU7_0NuXQe-_7s9zNndWofD0quLZnoqft8zDg6ZyApcHLrnPwbdB3dIW1vAfty9Wo-CWMMDCSMGs9u2j4yG5qFSbJQNg4K9PB26tbFBjKqPPKA== successfully removed temp profile /tmp/uc_v4yrv40b"
+#rawOutput="[INFO] internally launching GUI (X11 environment) [INFO] starting Xvfb [INFO] launching chromium instance [INFO] launching browser. visitor_data: TESTINGOUTPUTONLY-CgtqX3B3M3k2QklmRIEGgAgUg%3D%3D po_token: TESTINGOUTPUTONLY-jCQOtGaJ4KediLqyCsdGqZmU7_0NuXQe-_7s9zNndWofD0quLZnoqft8zDg6ZyApcHLrnPwbdB3dIW1vAfty9Wo-CWMMDCSMGs9u2j4yG5qFSbJQNg4K9PB26tbFBjKqPPKA== successfully removed temp profile /tmp/uc_v4yrv40b"
 
 # EXTRACT THE TOKENS
-VISITORDATA=$(echo ${theOUTPUT} | awk -F '[ ]' '{print $18}')
-POTOKEN=$(echo ${theOUTPUT} | awk -F '[ ]' '{print $20}')
+VISITORDATA=$(echo ${rawOutput} | awk -F '[ ]' '{print $18}')
+POTOKEN=$(echo ${rawOutput} | awk -F '[ ]' '{print $20}')
 
 # DISPLAY TO $USER
 echo "po_token: \"${POTOKEN}\""
 echo "visitor_data: \"${VISITORDATA}\""
+
+
 
 
 # MAKE THE CONFIGURATION MODIFICATIONS
@@ -55,6 +57,9 @@ echo "" | tee -a ${INV_LOG_FILE} >/dev/null
 echo "${TSTAMP} UPDATED TOKENS!" | tee -a ${INV_LOG_FILE} >/dev/null
 echo "${TSTAMP} po_token: \"${POTOKEN}\"" | tee -a ${INV_LOG_FILE} >/dev/null
 echo "${TSTAMP} visitor_data: \"${VISITORDATA}\"" | tee -a ${INV_LOG_FILE} >/dev/null
+
+
+
 
 echo ""
 echo "Random search to wake up YT"

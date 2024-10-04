@@ -19,6 +19,8 @@ docker and docker-compose is required as the script runs code from google inside
 
 The tokens only need updating once per 24-48 hours, however I think it is better to do it every 3 hours to change the tokens regularily to try and stay as anonymous as possible.
 
+Now and then, YT will show a blank page to you and ask to perform a search in order for the algo to show you videos. This is a load of BS, YT is just testing to see if you are a bot or human. I've added a curl command to automagically perform a search query randomized from searches.txt
+
 ***This script is NOT production worthy without extensive changes to the way the tokens are updated, etc.***
 
 ## Instructions
