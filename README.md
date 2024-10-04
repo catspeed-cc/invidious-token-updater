@@ -48,7 +48,7 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 2) Add user to /etc/sudoers (as root) ```nano /etc/sudoers``` add in ```invidious ALL=(ALL:ALL)NOPASSWD:ALL```
 3) Add user to docker group (as root) ```usermod -aG docker invidious```
 
-### Install inv_sig_helper within docker
+### Install inv_sig_helper (using docker)
 1) Switch to invidious user ```su - invidious``` if not already
 2) Make sure you are in home directory ```cd ~```
 3) Clone inv_sig_helper repository ```git clone https://github.com/iv-org/inv_sig_helper.git``` (follow inv_sig_helper docker install instructions)
