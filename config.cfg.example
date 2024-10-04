@@ -10,7 +10,7 @@ ITU_INSTALL_DIR=~/invidious-token-updater/
 INV_INSTALL_DIR=~/invidious/
 
 # SET ITU LOG FILE LOCATION HERE
-ITU_LOG_FILE=~/invidious-token-updater.log
+ITU_LOG_FILE=~/invidious-token-updater/invidious-token-updater.log
 
 # SET INVIDIOUS SERVICE NAME
 INV_SERVICE_NAME="invidious"

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-. ./config.cfg.sh
+. ./config.cfg
 
 echo ""
 echo "Updating tokens, please wait..."
@@ -23,7 +23,7 @@ newip=$(curl -s ipinfo.io/ip)
 echo "NEW EXTERNAL IP: ${newip}"
 
 echo ""
-echo "Generating visitordata & potoken, please wait ..."
+echo "Generating visitordata & potoken..."
 echo ""
 
 # THIS IS THE ACTUAL COMMAND, WILL TAKE TIME TO PROCESS
