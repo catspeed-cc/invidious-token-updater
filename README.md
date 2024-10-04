@@ -9,13 +9,13 @@ This script is to automatically update the visitordata and po-token for Invidiou
 
 This script is very dirty and will never be added to the invidious repository without extensive modifications.
 
-This script was written for a manually installed instance of Invidious under the user account "invidious". 
+This script was written for a manually installed instance of Invidious under the user account "invidious". Invidious executable must already be compiled, and service started. The script will modify the configuration file and restart the service.
 
 The user must have sudo access without password in order to restart the service, otherwise the script will ask for password. This is OK if you plan to run the script manually, but for crontab to automate it hourly, it will not work with a password.
 
-Please note the script will DELETE your config.yml and copy config.example.yml to config.yml where it will append the tokens to the configuration file. You must configure config.example.yml to your configuration settings so that when this script copies it, it already is set up and ready to go.
+Please note the script has now been modified tso that you provide the Invidious installation directory in the configuration file, and the script will modify the configuration file directly.
 
-docker-compose is required as the script runs code from google inside the docker container to get the tokens
+docker and docker-compose is required as the script runs code from google inside the docker container to get the tokens
 
 The tokens only need updating once per 24-48 hours, however I think it is better to do it every 3 hours to change the tokens regularily to try and stay as anonymous as possible.
 

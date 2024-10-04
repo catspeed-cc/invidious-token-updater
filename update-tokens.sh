@@ -44,25 +44,10 @@ echo "visitor_data: \"${VISITORDATA}\""
 # MAKE THE CONFIGURATION MODIFICATIONS
 
 echo ""
-echo "Changing to invidious directory (${INV_INSTALL_DIR})"
-echo ""
+echo "Editing invidious config file"
 
-# CHANGE TO CONFIG DIR
-cd ${INV_INSTALL_DIR}
-
-echo "Deleting old config.yml"
-
-# REMOVE EXISTING CONFIG
-rm config/config.yml
-
-echo "Copying config.example.yml to config.yml"
-
-# COPY EXAMPLE CONFIG (preconfigured to your liking)
-cp config/config.example.yml config/config.yml
-
-# ECHO THE TOKENS TO BOTTOM OF THE CONFIG FILE
-echo "po_token: \"${POTOKEN}\"" | tee -a config/config.yml
-echo "visitor_data: \"${VISITORDATA}\"" | tee -a config/config.yml
+sed -i 's/po_token.*/po_token: \"'${POTOKEN}'\"/g' ${INV_INSTALL_DIR}config/config.yml
+sed -i 's/visitor_data.*/visitor_data: \"'${VISITORDATA}'\"/g' ${INV_INSTALL_DIR}config/config.yml
 
 # ECHO THE TOKENS TO LOGFILE
 TSTAMP=$(date +"[%D][%T]")
