@@ -7,8 +7,6 @@ A proper development branch will be set up eventually. Readme below will be upda
 
 This script is to automatically update the visitordata and po-token for Invidious instance. 
 
-This script is very dirty and will never be added to the invidious repository without extensive modifications.
-
 This script was written for a manually installed instance of Invidious under the user account "invidious". Invidious executable must already be compiled, and service already started. The script will modify the configuration file and restart the service.
 
 The user 'invidious' must have sudo access without password in order to restart the service, otherwise the script will ask for password. This is OK if you plan to run the script manually, but for crontab to automate it hourly, it will not work with a password.
