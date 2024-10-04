@@ -81,6 +81,8 @@ echo ""
 echo "Restarting Invidious service..."
 sudo service ${INV_SERVICE_NAME} restart
 
+echo "${TSTAMP} Restarted docker / invidious service" | tee -a ${ITU_LOG_FILE} >/dev/null
+
 echo ""
 echo "Done. Have a good day :)"
 echo ""

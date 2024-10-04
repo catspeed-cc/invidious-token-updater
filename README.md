@@ -76,6 +76,6 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 4) Copy ```config.cfg.example``` to ```config.cfg```
 5) Edit ```config.cfg``` to your liking (most defaults probably OK)
 5) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
-6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
+6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious-token-updater/update-tokens.sh```
 
 If anyone wishes they can clone/fork the code and modify it.
