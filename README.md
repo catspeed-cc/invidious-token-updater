@@ -79,7 +79,3 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious/invidious-token-updater/update-tokens.sh```
 
 If anyone wishes they can fork the code and modify it.
-
-***If you want a production ready script, make the changes yourself, or hire someone who knows what they are doing.***
-
-***I just hacked something together to make it work. This is by no means production-ready.***
