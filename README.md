@@ -13,7 +13,7 @@ This script was written for a manually installed instance of Invidious under the
 
 The user must have sudo access without password in order to restart the service, otherwise the script will ask for password. This is OK if you plan to run the script manually, but for crontab to automate it hourly, it will not work with a password.
 
-Please note the script has now been modified tso that you provide the Invidious installation directory in the configuration file, and the script will modify the configuration file directly.
+Please note the script has now been modified so that you provide the Invidious installation directory in the configuration file, and the script will modify the configuration file directly.
 
 docker and docker-compose is required as the script runs code from google inside the docker container to get the tokens
 
