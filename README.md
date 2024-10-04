@@ -1,7 +1,7 @@
 # invidious-token-updater
 
 ## Script is abandoned again.
-I cannot figure out a good way to incorporate all three repositories, or explain how to install them separately. The project is a mess, however if anyone figures it out and can use it then that is ok :)
+I cannot figure out a good way to incorporate all of the repositories, or explain how to install them separately. The project is a mess, however if anyone figures it out and can use it then that is ok :) I may make minor changes for my own use, but there are no plans to make it ready for others to use.
 
 ## General
 
