@@ -1,5 +1,8 @@
 # invidious-token-updater
 
+## SCRIPT IS IN PROCESS OF BEING UPDATED ... CLONE/PULL AT OWN RISK.
+A proper development branch will be set up eventually.
+
 ## General
 
 This script is to automatically update the visitordata and po-token for Invidious instance. 
