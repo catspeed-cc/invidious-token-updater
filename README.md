@@ -35,7 +35,7 @@ INVIDIOUS INSTALL LOCATION - ~invidious/invidious/
 
 INVIDIOUS TOKEN UPDATER INSTALL LOCATION - ~invidious/invidious-token-updater/
 
-SCRIPT LOCATION - ~invidious/invidious/invidious-token-updater/update-tokens.sh
+SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 
 1) Create user invidious (as root)
    ```useradd -m invidious```
