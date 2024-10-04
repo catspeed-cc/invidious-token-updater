@@ -25,7 +25,7 @@ The tokens only need updating once per 24-48 hours, however I think it is better
 
 ***The script no longer replaces the invidious configuration file, it will edit the specific configuration lines directly.***
 
-***This script is NOT production worthy without extensive changes to the way the tokens are updated, etc.***
+***This script is NOT production ready without extensive changes to the way the tokens are updated, etc.***
 
 ## Instructions
 
@@ -84,4 +84,4 @@ If anyone wishes they can fork the code and modify it to a more proper state, an
 
 ***If you want a production ready script, make the changes yourself, or hire someone who knows what they are doing.***
 
-***I just hacked something together to make it work. This is by no means production-worthy.***
+***I just hacked something together to make it work. This is by no means production-ready.***
