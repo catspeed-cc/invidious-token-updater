@@ -19,9 +19,9 @@ Now and then, YT will show a blank page to you and ask to perform a search in or
 
 The tokens only need updating once per 24-48 hours, however I think it is better to do it every 3 hours to change the tokens regularily to try and stay as anonymous as possible.
 
-***The script no longer replaces the invidious configuration file, it will edit the specific configuration lines directly.***
-
 ***It is no longer required that the script resides inside the invidious directory.***
+
+***The script no longer replaces the invidious configuration file, it will edit the specific configuration lines directly.***
 
 ***This script is NOT production worthy without extensive changes to the way the tokens are updated, etc.***
 
