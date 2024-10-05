@@ -79,7 +79,7 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious-token-updater/update-tokens.sh```
 
 ## Dependencies
-This script makes use of several other repositories and/or docker images maintained by others. I do not have anything to do with their repos and they have nothing to do with this repo. These repositories / docker images should contain their original Licenses as they are either used as a remote docker image, or a cloned repository as a whole. Please be aware of these separate licenses.
+This script makes use of several other repositories and/or docker images maintained by others. I do not have anything to do with their repos and they have nothing to do with this repo. These repositories / docker images should contain their original licenses as they are either used as a remote docker image, or a cloned repository as a whole. Please be aware of these separate licenses.
 - Github (youtube-trusted-session-generator): https://github.com/iv-org/youtube-trusted-session-generator
 - Github (inv_sig_helper): https://github.com/iv-org/inv_sig_helper
 - Github (invidious): https://github.com/iv-org/invidious
