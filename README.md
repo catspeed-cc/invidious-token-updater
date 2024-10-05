@@ -84,11 +84,11 @@ This script makes use of several other repositories and/or docker images maintai
 - Github (inv_sig_helper): https://github.com/iv-org/inv_sig_helper
 - Github (invidious): https://github.com/iv-org/invidious
 
-As you can see from the installation instructions, you are cloning the code repositories directly yourself, and then configuring it yourself. While my code utilizes their code, their code is in no way included within my repository.
-
 ## License
 This repository uses Unlicense which can be found in LICENSE.md
 
 Please be aware of the licenses of the other projects found at their respective githubs listed under "Dependencies".
+
+As you can see from the installation instructions, you are cloning the code repositories directly yourself, and then configuring it yourself. While my code utilizes their code, their code is in no way included within my repository.
 
 If anyone wishes they can clone/fork this repository (invidious-token-updater) and modify it.
