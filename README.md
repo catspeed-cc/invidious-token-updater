@@ -84,5 +84,4 @@ This script makes use of several other repositories and/or docker images maintai
 - Github (inv_sig_helper): https://github.com/iv-org/inv_sig_helper
 - Github (invidious): https://github.com/iv-org/invidious
 
-
-If anyone wishes they can clone/fork the code and modify it.
+If anyone wishes they can clone/fork this repository (invidious-token-updater) and modify it.
