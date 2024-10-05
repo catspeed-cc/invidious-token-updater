@@ -87,3 +87,5 @@ This script makes use of several other repositories and/or docker images maintai
 As you can see from the installation instructions, you are cloning the code repositories directly yourself, and then configuring it yourself. While my code utilizes their code, their code is in no way included within my repository.
 
 If anyone wishes they can clone/fork this repository (invidious-token-updater) and modify it.
+
+THERE IS NO WARRANTY EXPRESSED OR IMPLIED TO THE EXTENT ALLOWABLE WITHIN YOUR JURISDICTION. USAGE IMPLIES ACCEPTANCE OF LICENSE INCLUDED WITHIN REPOSITORY.
