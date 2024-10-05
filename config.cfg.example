@@ -1,18 +1,14 @@
-#!/usr/bin/env bash
 
 # SET HTTP PROXY HERE
 # Example:
 #YOUR_HTTP_PROXY=http://192.168.1.101:8888
 YOUR_HTTP_PROXY=
 
-# SET YOUR ITU INSTALL DIR HERE
-ITU_INSTALL_DIR=~/invidious-token-updater/
-
 # SET YOUR INVIDIOUS INSTALL DIR HERE
 INV_INSTALL_DIR=~/invidious/
 
 # SET ITU LOG FILE LOCATION HERE
-ITU_LOG_FILE=~/invidious-token-updater/logs/token-updater.log
+ITU_LOG_FILE=${SCRIPT_PATH}/logs/token-updater.log
 
 # SET INVIDIOUS SERVICE NAME
 INV_SERVICE_NAME="invidious"

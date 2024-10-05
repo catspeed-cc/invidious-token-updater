@@ -1,6 +1,12 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-. ./config.cfg
+# Absolute path to this script. /home/user/bin/foo.sh
+SCRIPT=$(readlink -f $0)
+
+# Absolute path this script is in. /home/user/bin
+export SCRIPT_PATH=`dirname $SCRIPT`
+
+. ${SCRIPT_PATH}/config.cfg
 
 echo ""
 echo "Updating tokens, please wait..."
@@ -62,9 +68,9 @@ echo "${TSTAMP} visitor_data: \"${VISITORDATA}\"" | tee -a ${ITU_LOG_FILE} >/dev
 
 
 echo ""
-echo "Random search to wake up YT"
+echo "Random search to wake up YT ${SCRIPT_PATH}/searches.txt"
 echo ""
-YT_QUERY=$(shuf -n 1 ./searches.txt)
+YT_QUERY=$(shuf -n 1 ${SCRIPT_PATH}/searches.txt)
 YT_QUERY=${YT_QUERY//[$'\t\r\n']}
 YT_QUERY=${YT_QUERY// /+}
 echo "Querying for '${YT_QUERY}'"
