@@ -76,7 +76,7 @@ SCRIPT LOCATION - ~invidious/invidious-token-updater/update-tokens.sh
 4) Copy ```config.cfg.example``` to ```config.cfg```
 5) Edit ```config.cfg``` to your liking (most defaults probably OK)
 5) Test the script ```~invidious/invidious/invidious-token-updater/update-tokens.sh``` and check ```config/config.yml``` gets created with tokens on the bottom
-6) Add a crontab to invidious user account (this one is every 3 hours) ```00 */3 * * * ~invidious/invidious-token-updater/update-tokens.sh```
+6) Add a crontab to invidious user account (this one is every 3 hours) ```crontab -e``` add in ```00 */3 * * * ~invidious/invidious-token-updater/update-tokens.sh```
 
 ## Dependencies
 This script makes use of several other repositories and/or docker images maintained by others. I do not have anything to do with their repos and they have nothing to do with this repo. These repositories / docker images should contain their original licenses as they are either used as a remote docker image, or a cloned repository as a whole. Please be aware of these separate licenses.
