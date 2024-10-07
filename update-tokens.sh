@@ -41,13 +41,12 @@ rawOutput=$(sudo docker run --rm quay.io/invidious/youtube-trusted-session-gener
 #rawOutput="[INFO] internally launching GUI (X11 environment) [INFO] starting Xvfb [INFO] launching chromium instance [INFO] launching browser. visitor_data: TESTINGOUTPUTONLY-CgtqX3B3M3k2QklmRIEGgAgUg%3D%3D po_token: TESTINGOUTPUTONLY-jCQOtGaJ4KediLqyCsdGqZmU7_0NuXQe-_7s9zNndWofD0quLZnoqft8zDg6ZyApcHLrnPwbdB3dIW1vAfty9Wo-CWMMDCSMGs9u2j4yG5qFSbJQNg4K9PB26tbFBjKqPPKA== successfully removed temp profile /tmp/uc_v4yrv40b"
 
 # EXTRACT THE TOKENS
-VISITORDATA=$(echo ${rawOutput} | awk -F '[ ]' '{print $18}')
-POTOKEN=$(echo ${rawOutput} | awk -F '[ ]' '{print $20}')
+VISITORDATA=$(echo ${rawOutput} | sed -n "s/^.*visitor_data:\s*\(\S*\).*$/\1/p")
+POTOKEN=$(echo ${rawOutput} | sed -n "s/^.*po_token:\s*\(\S*\).*$/\1/p")
 
 # DISPLAY TO $USER
 echo "po_token: \"${POTOKEN}\""
 echo "visitor_data: \"${VISITORDATA}\""
-
 
 
 
