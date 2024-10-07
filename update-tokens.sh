@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 # Absolute path to this script. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f $0)
@@ -56,8 +56,8 @@ echo "visitor_data: \"${VISITORDATA}\""
 echo ""
 echo "Editing invidious config file"
 
-sed -i 's/*po_token.*/po_token: \"'${POTOKEN}'\"/g' ${INV_INSTALL_DIR}config/config.yml
-sed -i 's/*visitor_data.*/visitor_data: \"'${VISITORDATA}'\"/g' ${INV_INSTALL_DIR}config/config.yml
+sed -i 's/po_token.*/po_token: \"'${POTOKEN}'\"/g' ${INV_INSTALL_DIR}config/config.yml
+sed -i 's/visitor_data.*/visitor_data: \"'${VISITORDATA}'\"/g' ${INV_INSTALL_DIR}config/config.yml
 
 # ECHO THE TOKENS TO LOGFILE
 TSTAMP=$(date +"[%D][%T]")
