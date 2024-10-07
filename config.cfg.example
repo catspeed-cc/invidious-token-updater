@@ -14,7 +14,7 @@ ITU_LOG_FILE=${SCRIPT_PATH}/logs/token-updater.log
 INVIDIOUS_SERVICE_NAME="invidious"
 
 # SET WETHER INV_SIG_HELPER IS DOCKER (true = docker , false = service)
-ISH_ISDOCKER=false
+ISH_ISDOCKER=true
 
 # SET INV_SIG_HELPER DOCKER CONTAINER / SERVICE NAME
 ISH_CONT_SERVICE_NAME="inv_sig_helper"
