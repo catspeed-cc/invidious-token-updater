@@ -20,6 +20,8 @@ export HTTPS_PROXY=
 oldip=$(curl -s ipinfo.io/ip)
 echo "OLD EXTERNAL IP: ${oldip}"
 
+echo "Setting proxy ${YOUR_HTTP_PROXY}"
+
 # LEAVE THIS UNLESS YOU NEED SEPERATE PROXY FOR EACH (most users do not)
 export HTTP_PROXY=${YOUR_HTTP_PROXY}
 export HTTPS_PROXY=${YOUR_HTTP_PROXY}
@@ -85,6 +87,7 @@ sleep 2
 
 echo ""
 echo "Restarting Invidious service..."
+sudo service inv_sig_helper restart
 sudo service ${INV_SERVICE_NAME} restart
 
 echo "${TSTAMP} Restarted docker / invidious service" | tee -a ${ITU_LOG_FILE} >/dev/null
