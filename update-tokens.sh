@@ -80,7 +80,7 @@ curl https://www.youtube.com/results?search_query=${YT_QUERY} > /dev/null
 echo "${TSTAMP} YT_QUERY: \"${YT_QUERY}\"" | tee -a ${ITU_LOG_FILE} >/dev/null
 
 echo ""
-if [[ ${ISH_ISDOCKER} ]]; then
+if $ISH_ISDOCKER; then
   echo "Restarting inv_sig_helper docker..."
   sudo docker restart ${INV_SIG_HELPER_CONTAINER_NAME}
 else
