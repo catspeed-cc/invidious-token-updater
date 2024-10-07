@@ -13,8 +13,8 @@ echo "Updating tokens, please wait..."
 echo ""
 
 # CLEAR OLD PROXY VARS
-export HTTP_PROXY=
-export HTTPS_PROXY=
+export http_proxy=
+export https_proxy=
 
 # TEST WHAT CURRENT IP IS
 oldip=$(curl -s ipinfo.io/ip)
@@ -23,8 +23,8 @@ echo "OLD EXTERNAL IP: ${oldip}"
 echo "Setting proxy ${YOUR_HTTP_PROXY}"
 
 # LEAVE THIS UNLESS YOU NEED SEPERATE PROXY FOR EACH (most users do not)
-#export HTTP_PROXY=${YOUR_HTTP_PROXY}
-#export HTTPS_PROXY=${YOUR_HTTP_PROXY}
+export http_proxy=${YOUR_HTTP_PROXY}
+export https_proxy=${YOUR_HTTP_PROXY}
 
 # TEST WHAT NEW CURRENT IP IS
 newip=$(export HTTP_PROXY=${YOUR_HTTP_PROXY} ; export HTTPS_PROXY=${YOUR_HTTP_PROXY} ; curl -s ipinfo.io/ip)
