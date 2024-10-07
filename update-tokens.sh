@@ -23,11 +23,11 @@ echo "OLD EXTERNAL IP: ${oldip}"
 echo "Setting proxy ${YOUR_HTTP_PROXY}"
 
 # LEAVE THIS UNLESS YOU NEED SEPERATE PROXY FOR EACH (most users do not)
-export HTTP_PROXY=${YOUR_HTTP_PROXY}
-export HTTPS_PROXY=${YOUR_HTTP_PROXY}
+#export HTTP_PROXY=${YOUR_HTTP_PROXY}
+#export HTTPS_PROXY=${YOUR_HTTP_PROXY}
 
 # TEST WHAT NEW CURRENT IP IS
-newip=$(curl -s ipinfo.io/ip)
+newip=$(export HTTP_PROXY=${YOUR_HTTP_PROXY} ; export HTTPS_PROXY=${YOUR_HTTP_PROXY} ; curl -s ipinfo.io/ip)
 echo "NEW EXTERNAL IP: ${newip}"
 
 echo ""
