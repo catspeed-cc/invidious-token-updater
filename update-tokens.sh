@@ -79,6 +79,10 @@ echo "Querying for '${YT_QUERY}'"
 curl https://www.youtube.com/results?search_query=${YT_QUERY} > /dev/null
 echo "${TSTAMP} YT_QUERY: \"${YT_QUERY}\"" | tee -a ${ITU_LOG_FILE} >/dev/null
 
+sudo docker restart proton-privoxy
+
+sleep 15
+
 echo ""
 if $ISH_ISDOCKER; then
   echo "Restarting inv_sig_helper docker..."
@@ -88,7 +92,7 @@ else
   sudo service ${ISH_CONT_SERVICE_NAME} restart
 fi
 
-sleep 2
+sleep 5
 
 echo ""
 echo "Restarting Invidious service..."
