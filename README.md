@@ -1,3 +1,10 @@
+# REPOSITORY MOVED
+Please note the repository has been moved from mooleshacat/invidious-token-updater to catspeed-cc/invidious-token-updater.
+
+You can update your local clone with ```git remote set-url origin [https://github.com/catspeed-cc/invidious](https://github.com/catspeed-cc/invidious-token-updater)```
+
+<br />
+
 # invidious-token-updater
 
 ## Script is abandoned again.
